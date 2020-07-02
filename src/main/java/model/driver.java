@@ -12,7 +12,7 @@ public class driver {
 		URL url;
 		try {
 			url = new URL(args[0]);
-			System.out.println(args[0]);
+			System.out.println("Finding suitable tables in " + args[0]);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Invalid URL");
@@ -31,6 +31,7 @@ public class driver {
 				}
 				Desktop desktop = Desktop.getDesktop();
 				if (file.exists()) {
+					System.out.println("Spreadsheet created...");
 					desktop.open(file);
 				}
 			} catch (Exception e) {
