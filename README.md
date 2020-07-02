@@ -35,7 +35,7 @@ To build this project you will need Maven 2. You can get it at:
      
  Once packaged into a jar, you can use the app by using your console of choice
   
-    java -jar .\Excelsior-0.0.1.jar [Website URL] [File Name]
+    java -jar .\Excelsior-0.0.1-jar-with-dependencies.jar [Website URL] [File Name]
 
 ## License
      Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
