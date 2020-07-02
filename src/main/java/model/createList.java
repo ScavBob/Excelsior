@@ -17,7 +17,7 @@ public class createList {
 		//String name = scan.next();
 		XSSFWorkbook workbook = new XSSFWorkbook();
 		XSSFSheet sheet = null;
-
+		System.out.println("Filling table with " + tables.length + " sheets...");
 		for (int i = 0; i < tables.length; i++) {
 			sheet = workbook.createSheet("Table " + i);
 			int rowNum = 0;
@@ -35,7 +35,7 @@ public class createList {
 				sheet.autoSizeColumn(j);
 			}
 		}
-
+		
 		try (FileOutputStream outputStream = new FileOutputStream(file + ".xlsx")) {
 			workbook.write(outputStream);
 			return file;
