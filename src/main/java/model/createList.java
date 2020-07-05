@@ -24,15 +24,18 @@ public class createList {
 			int colNum = 0;
 			Row row = sheet.createRow(rowNum);
 			for (int j = 0; j < tables[i].size(); j++) {
-				if (j % rowNo[i] == 0) {
-					row = sheet.createRow(++rowNum);
-					colNum = 0;
+				if(rowNo[i] != 0) {
+					if (j % rowNo[i] == 0) {
+						row = sheet.createRow(++rowNum);
+						colNum = 0;
+					}
+					Cell cell = row.createCell(colNum++);
+					cell.setCellValue((String) tables[i].get(j));
 				}
-				Cell cell = row.createCell(colNum++);
-				cell.setCellValue((String) tables[i].get(j));
 			}
-			for (int j = 0; j < tables[i].size() / rowNo[i]; j++) {
-				sheet.autoSizeColumn(j);
+			if(rowNo[i] != 0)
+				for (int j = 0; j < tables[i].size() / rowNo[i]; j++) {
+					sheet.autoSizeColumn(j);
 			}
 		}
 		
